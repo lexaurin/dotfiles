@@ -1,0 +1,6 @@
+PS_HOST=" \[\033[01;31m\]@\h\[\033[00m\]"
+
+#local (private) vars 
+if [ -f ~/.bash_vars_local ]; then
+    . ~/.bash_vars_local
+fi
