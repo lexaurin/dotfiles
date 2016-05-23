@@ -1,0 +1,43 @@
+# User specific part of .bashrc
+# Attach it with ". ~/.bashrc_user" in .bashrc file
+
+# Full path of this script
+THIS=`readlink -f "${BASH_SOURCE[0]}"`
+
+# This directory path
+DIR=`dirname "${THIS}"`
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=10000
+HISTFILESIZE=20000
+
+# Alias definitions.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+#Prompt
+#PS1="\u@\h \w \$ "
+PS1=" \[\033[01;32m\]λ\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] "
+
+#Git prompt
+export GIT_PS1_SHOWCOLORHINTS=1
+. "$DIR/modules/git/contrib/completion/git-prompt.sh"
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUPSTREAM="git verbose legacy"
+GIT_PS1_DESCRIBE_STYLE="default"
+GIT_PS1_SHOWCOLORHINTS=1
+
+PSORIG="$PS1"
+PS1=$PSORIG'$(__git_ps1 "\[\033[01;33m\]%s \[\033[00m\]")'
+
+
+#Functions
+h2d(){
+  echo "ibase=16; $@"|bc
+}
+d2h(){
+  echo "obase=16; $@"|bc
+}

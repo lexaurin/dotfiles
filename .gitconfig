@@ -1,0 +1,46 @@
+[user]
+	name = Lex Mourek
+	email = lex@mourek.name
+[color]
+	ui = auto
+[giggle]
+	main-window-view = HistoryView
+	main-window-maximized = true
+	main-window-geometry = 471x333+707+339
+	history-view-vpane-position = 679
+	file-view-vpane-position = 926
+	show-graph = true
+[alias]
+    mergedone = merge --no-ff --no-commit
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log -p
+    who = shortlog -s --
+    wtf = describe --tag
+    ochangelog = tag -l v* -n20
+    changelog = "!git tag -l \"v*\" -n20 | sed -n 'H;${;g;s/\\n[^v]/\\x00/g;p}' | sort -rV | tr \\\\000 \\\\n | less"
+
+    oldest-ancestor = !bash -c 'diff -u <(git rev-list --first-parent "${1:-trunk}") <(git rev-list --first-parent "${2:-HEAD}") | sed -ne \"s/^ //p\" | head -1' -
+    fepo = fetch --prune origin
+    poh = push origin HEAD
+    
+    dn = "!git status --porcelain --untracked-files=no --ignore-submodules=all | head -1 | sed 's/^ .* //' | xargs git diff -- && git status"
+    an = "!git status --porcelain --untracked-files=no --ignore-submodules=all | head -1 | sed 's/^ .* //' | xargs git add -- && git status"
+
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=format:\"%C(yellow)%h %Cred%cr %Cblue(%an)%C(white)%d%Creset %s\" --abbrev-commit --all 
+[merge]
+	tool = meld
+
+[github]
+	user = lexvjatkin
+	token = 7322435b11576100d5eb9fbfece342e1
+[core]
+	autocrlf = input
+[http]
+	#proxy = http://localhost:8080
+[push]
+	default = simple
