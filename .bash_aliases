@@ -18,6 +18,7 @@ alias la='ls -A'
 
 #JS
 alias npmls="npm list --depth 0"
+alias npmlsg="npm list -g --depth 0"
 alias npmfuck="rm -rf ~/.npm && npm cache clear && rm -rf node_modules && npm install && npm shrinkwrap"
 
 #local (private) aliases 
