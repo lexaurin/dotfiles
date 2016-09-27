@@ -33,6 +33,8 @@
 
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
     lola = log --graph --decorate --pretty=format:\"%C(yellow)%h %Cred%cr %Cblue(%an)%C(white)%d%Creset %s\" --abbrev-commit --all 
+
+    rc = "!git show $(cat .git/rebase-apply/original-commit)"
 [merge]
 	tool = meld
 
