@@ -1,6 +1,7 @@
 [user]
 	name = Lex Mourek
 	email = lex@mourek.name
+	signingkey = 390B3C06
 [color]
 	ui = auto
 [giggle]
