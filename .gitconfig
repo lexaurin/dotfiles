@@ -2,6 +2,9 @@
 	name = Lex Mourek
 	email = lex@mourek.name
 	signingkey = 390B3C06
+[core]
+        editor = nano
+        autocrlf = input
 [color]
 	ui = auto
 [giggle]
@@ -41,8 +44,6 @@
 [github]
 	user = lexvjatkin
 	token = 7322435b11576100d5eb9fbfece342e1
-[core]
-	autocrlf = input
 [http]
 	#proxy = http://localhost:8080
 [push]
