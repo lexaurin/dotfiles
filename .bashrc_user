@@ -2,10 +2,11 @@
 # Attach it with ". ~/.bashrc_user" in .bashrc file
 
 # Full path of this script
-THIS=`readlink -f "${BASH_SOURCE[0]}"`
+# for greadlink: brew install coreutils
+#THIS=`(command -v greadlink && greadlink -f "${BASH_SOURCE[0]}") || readlink -f "${BASH_SOURCE[0]}"`
 
 # This directory path
-DIR=`dirname "${THIS}"`
+#DIR=`dirname "${THIS}"`
 
 #variables
 if [ -f ~/.bash_vars ]; then
@@ -14,20 +15,22 @@ fi
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=10000
-HISTFILESIZE=20000
+HISTFILESIZE=40000
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# `brew install bash-completion` caveats:
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 #Prompt
 #PS1="\u@\h \w \$ "
 PS1=" \[\033[01;32m\]λ\[\033[00m\]$PS_HOST \[\033[01;34m\]\w\[\033[00m\] "
 
 #Git prompt
-export GIT_PS1_SHOWCOLORHINTS=1
-. "$DIR/modules/git/contrib/completion/git-prompt.sh"
+#. "$DIR/modules/git/contrib/completion/git-prompt.sh"
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
