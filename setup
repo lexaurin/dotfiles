@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd ~/workspace/dotfiles
+cd dotfiles/
 git submodule update --init
 ln -s $PWD/.bash_aliases ~/.bash_aliases
 ln -s $PWD/.bash_vars ~/.bash_vars
