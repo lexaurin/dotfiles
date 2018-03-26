@@ -1,4 +1,5 @@
 alias ..="cd .."
+alias grepc="grep --color=always"
 
 #WGETing
 alias wgeto="wget -qO-"
