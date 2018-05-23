@@ -38,6 +38,7 @@
     lola = log --graph --decorate --pretty=format:\"%C(yellow)%h %Cred%cr %Cblue(%an)%C(white)%d%Creset %s\" --abbrev-commit --all 
 
     rc = "!git show $(cat .git/rebase-apply/original-commit)"
+    ab = "!echo Commit diff $1...$(git rev-parse --abbrev-ref HEAD) && echo \"Behind\tAhead\" && git rev-list --left-right --count $1...HEAD"
 [merge]
 	tool = meld
 
