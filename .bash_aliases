@@ -26,3 +26,6 @@ alias npmfuck="rm -rf ~/.npm && npm cache clear && rm -rf node_modules && npm in
 if [ -f ~/.bash_aliases_local ]; then
     . ~/.bash_aliases_local
 fi
+
+#GIT
+alias gs='git status'
