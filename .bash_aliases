@@ -22,6 +22,9 @@ alias npmls="npm list --depth 0"
 alias npmlsg="npm list -g --depth 0"
 alias npmfuck="rm -rf ~/.npm && npm cache clear && rm -rf node_modules && npm install && npm shrinkwrap"
 
+#mysql
+alias mysqlr="mysql -u root -p"
+
 #local (private) aliases 
 if [ -f ~/.bash_aliases_local ]; then
     . ~/.bash_aliases_local

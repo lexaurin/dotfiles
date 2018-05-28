@@ -14,8 +14,8 @@ if [ -f ~/.bash_vars ]; then
 fi
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000
-HISTFILESIZE=40000
+HISTSIZE=500000
+HISTFILESIZE=1000000
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
@@ -49,3 +49,6 @@ h2d(){
 d2h(){
   echo "obase=16; $@"|bc
 }
+
+#Completions
+. ~/.fastlane/completions/completion.sh
