@@ -51,4 +51,4 @@ d2h(){
 }
 
 #Completions
-. ~/.fastlane/completions/completion.sh
+#. ~/.fastlane/completions/completion.sh
