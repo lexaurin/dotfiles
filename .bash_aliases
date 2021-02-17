@@ -32,3 +32,7 @@ fi
 
 #GIT
 alias gs='git status'
+
+# Docker/K8s
+alias kc="kubectl"
+alias docker-server="docker run -d -p 5000:5000 --restart=always --name registry registry:2"
