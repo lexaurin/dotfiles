@@ -2,7 +2,7 @@
 
 cd dotfiles/
 git submodule update --init
-ln -s $PWD/.bash_aliases ~/.bash_aliases
+ln -s $PWD/.aliases ~/.aliases
 ln -s $PWD/.bash_vars ~/.bash_vars
 ln -s $PWD/.bashrc_user ~/.bashrc_user
 ln -s $PWD/.gitconfig ~/.gitconfig
