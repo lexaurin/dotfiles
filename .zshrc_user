@@ -1,1 +1,54 @@
 source $HOME/.aliases
+
+setopt HIST_IGNORE_SPACE
+
+export CLICOLOR=1
+
+# brew zsh-completion caveats
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+fi
+
+
+# Prompt 
+# @see prompt variable http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#SEC59
+# @see prompt colors and styling http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Visual-effects
+# Powerline arrow? https://github.com/powerline/powerline/issues/1610 https://github.com/powerline/fonts
+setopt prompt_subst
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+zstyle ':vcs_info:git:*' formats '%b'
+PROMPT='%(?.%K{8} %~ .%K{red} %~ )%F{0}%K{yellow} ${vcs_info_msg_0_} %f%k '
+RPROMPT='%(?.%F{green}. .%F{red}%? )%f'
+
+# fnm
+  eval "$(fnm env)"
+
+#zsh-autosuggestions
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+export LESS='-R'
+export LESSOPEN='|pygmentize -f terminal256 -O style=nord -g %s'
+
+export PATH="/usr/local/opt/helm@2/bin:$PATH"
+
+# For Bazel, etc.
+export PATH="$PATH:$HOME/bin"
+
+# AdoptOpenJDK default version
+JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
+export JAVA_HOME
+
+# AdoptOpenJDK version switch
+jdk() {
+        version=$1
+        export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+        java -version
+ }
