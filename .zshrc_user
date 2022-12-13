@@ -26,8 +26,8 @@ zstyle ':vcs_info:git:*' formats '%b'
 PROMPT='%(?.%K{8} %~ .%K{red} %~ )%F{0}%K{yellow} ${vcs_info_msg_0_} %f%k '
 RPROMPT='%(?.%F{green}. .%F{red}%? )%f'
 
-# fnm
-  eval "$(fnm env)"
+# fnm - To automatically run fnm use when a directory contains a .node-version or .nvmrc file
+eval "$(fnm env --use-on-cd)"
 
 #zsh-autosuggestions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -52,3 +52,9 @@ jdk() {
         export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
         java -version
  }
+
+
+# pyenv caveats
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

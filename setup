@@ -3,8 +3,8 @@
 cd dotfiles/
 git submodule update --init
 ln -s $PWD/.aliases ~/.aliases
-ln -s $PWD/.bash_vars ~/.bash_vars
-ln -s $PWD/.bashrc_user ~/.bashrc_user
 ln -s $PWD/.gitconfig ~/.gitconfig
-touch ~/.bash_vars_local
+ln -s $PWD/.zshrc_user ~/.zshrc_user
+echo "source \$HOME/.zshrc_user" >> ~/.zshrc
+
 echo "Done!"
