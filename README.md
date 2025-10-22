@@ -4,7 +4,7 @@
 
 ```
 brew install git
-brew tap homebrew/cask-fonts && brew install --cask font-source-code-pro
+brew install --cask font-source-code-pro
 ```
 
 ## Installation
