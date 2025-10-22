@@ -4,14 +4,6 @@ setopt HIST_IGNORE_SPACE
 
 export CLICOLOR=1
 
-# brew zsh-completion caveats
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-    autoload -Uz compinit
-    compinit
-fi
-
 
 # Prompt 
 # @see prompt variable http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#SEC59
@@ -30,8 +22,8 @@ RPROMPT='%(?.%F{green}. .%F{red}%? )%f'
 eval "$(fnm env --use-on-cd)"
 
 #zsh-autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
 export LESS='-R'
@@ -43,18 +35,18 @@ export PATH="/usr/local/opt/helm@2/bin:$PATH"
 export PATH="$PATH:$HOME/bin"
 
 # AdoptOpenJDK default version
-JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
-export JAVA_HOME
+#JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
+#export JAVA_HOME
 
 # AdoptOpenJDK version switch
-jdk() {
-        version=$1
-        export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
-        java -version
- }
+#jdk() {
+#       version=$1
+#        export JAVA_HOME=$(/usr/libexec/java_home -v"$version");
+#         java -version
+#  }
 
 
 # pyenv caveats
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
