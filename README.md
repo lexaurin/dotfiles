@@ -5,6 +5,7 @@
 ```
 brew install git
 brew install --cask font-source-code-pro
+brew install fnm
 ```
 
 ## Installation
